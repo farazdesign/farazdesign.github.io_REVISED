@@ -1,0 +1,201 @@
+.hero {
+  background: linear-gradient(135deg, #ff3d00, #1a237e, #396afc, #d50000);
+  background-position: 90% 50%;
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease;
+  -moz-animation: Gradient 15s ease;
+  animation: Gradient 15s ease;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 90% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 90% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 90% 50%;
+  }
+}
+
+.hero-area {
+  height: 100vh;
+}
+
+.hero-text {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.caption {
+  padding-top: 75px;
+}
+
+.section-arrow {
+  padding-top: 150px;
+}
+
+@media only screen and (max-width: 600px) {
+  .section-arrow {
+    padding-top: 0px;
+  }
+}
+
+.bullet {
+  display: block;
+  float: left;
+  margin-bottom: 1rem;
+  margin-right: 0.75rem;
+}
+
+.heading-primary-main {
+  display: block;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+
+  backface-visibility: hidden;
+}
+
+.heading-primary-sub {
+  display: block;
+  animation: moveInRight 3s ease-out;
+  backface-visibility: hidden;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.btn-animated {
+  display: block;
+  margin-top: 75px;
+  animation: moveInBottom 2s ease-out 4s;
+  animation-fill-mode: backwards;
+  opacity: 0.4;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .rolecards {
+    height: 380px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .delivcards {
+    height: 385px;
+  }
+}
+
+.sidenav {
+  text-align: left;
+}
+
+.row-1,
+.row-2,
+.row-3,
+.row-4,
+.row-5,
+.row-6 {
+  opacity: 0;
+}
+
+.tabs .indicator {
+  background-color: #2196f3;
+} /*Color of underline*/
+
+.bio {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-study {
+  padding: 30px;
+}
+
+.study-text {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .caption h2 {
+    font-size: 2.5em;
+  }
+}
+
+.flow-text {
+  line-height: 150%;
+}
+
+.bounce {
+  -moz-animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
