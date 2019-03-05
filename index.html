@@ -48,19 +48,32 @@
 
 
   <section class="hero-area hero-text hero">
-    <div class="caption center-align">
-      <br />
-      <br />
-      <h2 class="heading-primary-main ">Hello! I'm <span class="white-text">Faraz Uddin</span> a <span class="white-text">UX/UI
-          Designer</span></h2>
-      <h4 class="heading-primary-sub">Based in <span class="white-text">Washington D.C.</span></h4>
-      <br />
-      <h5 class="heading-primary-sub">I combine my <span class="white-text">analytical</span> and <span class="white-text">artistic</span>
-        talents to create <span class="white-text">user-centered digital designs</span></h5>
+    <div class="caption container">
+      <div class="row">
+        <div class="col l6 s12">
+          <br />
+          <br />
+          <h2 class="heading-primary-main ">Hello! I'm <span class="white-text">Faraz Uddin</span> a <span class="white-text">UX/UI
+              Designer</span></h2>
+          <h4 class="heading-primary-sub">Based in <span class="white-text">Washington D.C.</span></h4>
+          <br />
+          <h5 class="heading-primary-sub">I combine my <span class="white-text">analytical</span> and <span class="white-text">artistic</span>
+            talents to create <span class="white-text">user-centered digital designs</span></h5>
+          </div>
+          <div class="col l6 s12">
+            <div class="carousel hide-on-med-and-down">
+              <div class="carousel-item"><img src="img/Sketch.png"></div>
+              <div class="carousel-item"><img src="img/Wireframe.png"></div>
+              <div class="carousel-item"><img src="img/Hi-Fi.png"></div>
+            </div>
+            </div>
+          </div>
 
+          <div class="center">
       <a href="#projects" class="btn-animated">
         <i class="arrow-icon material-icons large bounce white-text ">expand_more</i></a>
         <br>
+      </div>
   </section>
 
   <section id="projects">
@@ -83,7 +96,7 @@
               </div>
               <div class="card-content">
                 <span class="card-title black-text">Bullmrkte</span>
-                <p class="black-text">
+                <p class="black-text min-line-2">
                   A platform for students of all ages to find meaningfull careers
                 </p>
               </div>
@@ -98,7 +111,7 @@
               </div>
               <div class="card-content">
                 <span class="card-title black-text">Ferrari Fitness</span>
-                <p class="black-text">
+                <p class="black-text min-line-2">
                   A cloud storage app for the fitness industry
                 </p>
               </div>
@@ -152,59 +165,7 @@
         </div>
       </li>
 
-      <li class="collapsible collapsible-accordion"></li>
-      <li>
-        <a class="collapsible-header white-text waves-effect waves" href="index.html">
-          <i class="material-icons white-text ">home</i>Home
-        </a>
-      </li>
 
-      <li class="collapsible collapsible-accordion"></li>
-      <li>
-        <a class="collapsible-header white-text waves-effect waves" href="about.html">
-          <i class="material-icons white-text ">face</i>About
-        </a>
-      </li>
-
-      <ul class="collapsible collapsible-accordion">
-        <li>
-          <a class="collapsible-header white-text waves-effect waves ">
-            <i class="material-icons white-text ">color_lens</i>Design
-            Projects
-            <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i>
-          </a>
-          <div class="collapsible-body z-depth-4">
-            <ul>
-              <li>
-                <a class="waves-effect waves" href="FFitness.html">Ferrari Fitness</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-
-      <li>
-        <ul class="collapsible collapsible-accordion blue">
-          <li>
-            <a class="collapsible-header white-text waves-effect">
-              <i class="material-icons white-text ">important_devices</i>Coding Projects
-              <i class="material-icons right white-text" style="margin-right:0;">arrow_drop_down</i>
-            </a>
-            <div class="collapsible-body z-depth-3">
-              <ul>
-                <li>
-                  <a class="waves-effect waves" href="prjWeb.html">Website Projects</a>
-                </li>
-                <li>
-                  <a class="waves-effect waves" href="prjJS.html">Javascript Projects</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </section>
 
   <!-- Import jQuery before materialize.js -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -214,6 +175,15 @@
     $(document).ready(function () {
       // Init Side nav
       $('.button-collapse').sideNav();
+
+      $('.carousel').carousel({
+      });
+
+      autoplay()   
+      function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 2000);
+      }
 
       // Init SliderSlider
       $('.slider').slider({
