@@ -17,34 +17,34 @@
 
 <body>
 
-    <div class="navbar-fixed">
-        <nav class="black">
-          <div class="container">
-            <div class="nav-wrapper">
-              <a href="index.html" class="brand-logo"> <img src="/img/bluelogo.svg" alt="" height="65" width="55"></a></a>
-              <a href="index.html" data-activates="mobile-nav" class="button-collapse">
-                <i class="material-icons">menu</i>
-              </a>
-              <ul class="right hide-on-med-and-down">
-                  <li>
-                      <a href="index.html">Work</a>
-                    </li>
-                    <li>
-                      <a href="about.html">About</a>               
-                  </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-      <ul class="side-nav" id="mobile-nav">
-          <li>
+  <div class="navbar-fixed">
+    <nav class="black">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo"> <img src="/img/bluelogo.svg" alt="" height="65" width="55"></a></a>
+          <a href="index.html" data-activates="mobile-nav" class="button-collapse">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li>
               <a href="index.html">Work</a>
             </li>
             <li>
-              <a href="about.html">About</a>               
-          </li>
-      </ul>
+              <a href="about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <ul class="side-nav" id="mobile-nav">
+    <li>
+      <a href="index.html">Work</a>
+    </li>
+    <li>
+      <a href="about.html">About</a>
+    </li>
+  </ul>
 
 
   <section class="hero-area hero-text hero">
@@ -59,19 +59,19 @@
           <br />
           <h5 class="heading-primary-sub">I combine my <span class="white-text">analytical</span> and <span class="white-text">artistic</span>
             talents to create <span class="white-text">user-centered digital designs</span></h5>
+        </div>
+        <div class="col l6 s12">
+          <div class="carousel hide-on-med-and-down">
+            <div class="carousel-item"><img src="indexIMG/Sketch.png"></div>
+            <div class="carousel-item"><img src="indexIMG/Wireframe.png"></div>
+            <div class="carousel-item"><img src="indexIMG/Hi-Fi.png"></div>
           </div>
-          <div class="col l6 s12">
-            <div class="carousel hide-on-med-and-down">
-              <div class="carousel-item"><img src="indexIMG/Sketch.png"></div>
-              <div class="carousel-item"><img src="indexIMG/Wireframe.png"></div>
-              <div class="carousel-item"><img src="indexIMG/Hi-Fi.png"></div>
-            </div>
-            </div>
-          </div>
+        </div>
+      </div>
 
-          <div class="center">
-      <a href="#projects" class="btn-animated">
-        <i class="arrow-icon material-icons large bounce white-text ">expand_more</i></a>
+      <div class="center">
+        <a href="#projects" class="btn-animated">
+          <i class="arrow-icon material-icons large bounce white-text ">expand_more</i></a>
         <br>
       </div>
   </section>
@@ -168,94 +168,93 @@
 
 
 
-  <!-- Import jQuery before materialize.js -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <!-- Import jQuery before materialize.js -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Init Side nav
-      $('.button-collapse').sideNav();
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          // Init Side nav
+          $('.button-collapse').sideNav();
 
-      $('.carousel').carousel({
-      });
+          $('.carousel').carousel({});
 
-      autoplay()   
-      function autoplay() {
-        $('.carousel').carousel('next');
-        setTimeout(autoplay, 2000);
-      }
+          autoplay()
 
-      // Init SliderSlider
-      $('.slider').slider({
-        indicators: false,
-        height: 500,
-        transition: 500,
-        interval: 6000
-      });
-
-      // Init Scrollspy
-      $('.scrollspy').scrollSpy();
-
-      // Scrollfire
-      const options = [
-        {
-          selector: '.row-1',
-          offset: 200,
-          callback: function (el) {
-            Materialize.fadeInImage($(el));
+          function autoplay() {
+            $('.carousel').carousel('next');
+            setTimeout(autoplay, 2000);
           }
-        },
-        {
-          selector: '.row-2',
-          offset: 200,
-          callback: function (el) {
-            Materialize.fadeInImage($(el));
+
+          // Init SliderSlider
+          $('.slider').slider({
+            indicators: false,
+            height: 500,
+            transition: 500,
+            interval: 6000
+          });
+
+          // Init Scrollspy
+          $('.scrollspy').scrollSpy();
+
+          // Scrollfire
+          const options = [{
+              selector: '.row-1',
+              offset: 200,
+              callback: function (el) {
+                Materialize.fadeInImage($(el));
+              }
+            },
+            {
+              selector: '.row-2',
+              offset: 200,
+              callback: function (el) {
+                Materialize.fadeInImage($(el));
+              }
+            },
+            {
+              selector: '.row-3',
+              offset: 200,
+              callback: function (el) {
+                Materialize.fadeInImage($(el));
+              }
+            }
+          ];
+
+          Materialize.scrollFire(options);
+        });
+
+        // Smooth Scrolling
+        $('a').on('click', function (event) {
+          if (this.hash !== '') {
+            event.preventDefault();
+
+            const hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              },
+              800,
+              function () {
+                window.location.hash = hash;
+              }
+            );
           }
-        },
-        {
-          selector: '.row-3',
-          offset: 200,
-          callback: function (el) {
-            Materialize.fadeInImage($(el));
-          }
+        });
+      </script>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128628853-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+          dataLayer.push(arguments);
         }
-      ];
+        gtag('js', new Date());
 
-      Materialize.scrollFire(options);
-    });
-
-    // Smooth Scrolling
-    $('a').on('click', function (event) {
-      if (this.hash !== '') {
-        event.preventDefault();
-
-        const hash = this.hash;
-
-        $('html, body').animate(
-          {
-            scrollTop: $(hash).offset().top
-          },
-          800,
-          function () {
-            window.location.hash = hash;
-          }
-        );
-      }
-    });
-  </script>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128628853-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-128628853-1');
-  </script>
+        gtag('config', 'UA-128628853-1');
+      </script>
 </body>
 
 </html>
